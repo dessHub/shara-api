@@ -24,7 +24,7 @@ class ProductController {
     const productInfo = request.only(['name', 'price'])
 
     const product = new Product()
-    product.name = productnfo.name
+    product.name = productInfo.name
     product.price = productInfo.price
 
     await product.save()

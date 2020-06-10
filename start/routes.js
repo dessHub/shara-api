@@ -21,9 +21,10 @@ Route.group(() => {
   Route.post('/login', 'AuthController.login')
 
   Route.post('products', 'ProductController.store').middleware('authAdmin')
-  Route.get('products', 'ProductController.index').middleware('authVerif')
-  Route.get('products/:id', 'ProductController.show').middleware('auth')
-  Route.put('products/:id', 'ProductController.update')
-  Route.delete('products/:id', 'ProductController.delete')
+  Route.get('products', 'ProductController.index')
+  Route.get('products/:id', 'ProductController.show').middleware('authAdmin')
+  Route.put('products/:id', 'ProductController.update').middleware('authAdmin')
+  Route.delete('products/:id', 'ProductController.delete').middleware('authAdmin')
+
 
 }).prefix('api/v1')

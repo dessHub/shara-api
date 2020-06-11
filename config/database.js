@@ -7,6 +7,7 @@ const Env = use('Env')
 const Helpers = use('Helpers')
 const Url = require('url-parse')
 const CLEARDB_DATABASE_URL = new Url(Env.get('CLEARDB_DATABASE_URL'))
+console.log("ff",CLEARDB_DATABASE_URL)
 
 module.exports = {
   /*

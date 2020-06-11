@@ -5,6 +5,10 @@ const Model = use('Model')
 
 class History extends Model {
 
+  static boot () {
+    super.boot()
+  }
+
   static get table() {
     return 'histories'
   }

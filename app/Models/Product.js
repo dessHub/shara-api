@@ -5,6 +5,10 @@ const Model = use('Model')
 
 class Product extends Model {
 
+  static boot () {
+    super.boot()
+  }
+
   static get table() {
     return 'products'
   }

@@ -26,5 +26,12 @@ Route.group(() => {
   Route.put('products/:id', 'ProductController.update').middleware('authAdmin')
   Route.delete('products/:id', 'ProductController.delete').middleware('authAdmin')
 
+  Route.get('admin/orders', 'OrderController.index').middleware('authAdmin')
+  Route.get('admin/orders/:id', 'OrderController.show').middleware('authAdmin')
+
+  Route.post('orders', 'OrderController.store').middleware('auth')
+  Route.get('orders', 'OrderController.myorders').middleware('auth')
+  Route.get('orders/:id', 'OrderController.retrieve').middleware('auth')
+
 
 }).prefix('api/v1')

@@ -7,7 +7,6 @@ const Env = use('Env')
 const Helpers = use('Helpers')
 const Url = require('url-parse')
 const CLEARDB_DATABASE_URL = new Url(Env.get('CLEARDB_DATABASE_URL'))
-console.log("ff",CLEARDB_DATABASE_URL)
 
 module.exports = {
   /*
@@ -76,7 +75,7 @@ module.exports = {
   pg: {
     client: 'pg',
     connection: {
-      host: Env.get('DB_HOST', CLEARDB_DATABASE_URL.host),
+      host: Env.get('DB_HOST', CLEARDB_DATABASE_URL.hostname),
       port: Env.get('DB_PORT', ''),
       user: Env.get('DB_USER', CLEARDB_DATABASE_URL.username),
       password: Env.get('DB_PASSWORD', CLEARDB_DATABASE_URL.password),

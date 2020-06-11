@@ -1,5 +1,6 @@
 'use strict'
 
+const Mail = use('Mail')
 const Order = use('App/models/Order')
 const History = use('App/models/History')
 
@@ -86,6 +87,11 @@ class OrderController {
     order.user_id = authUser.id
 
     await order.save()
+
+    await Mail.send('emails.welcome', {order}, (message) => {
+      message.from('desshub95@gmail.com')
+      message.to(authUser.email)
+    })
     const orderId = order.id
 
     const reducedProducts = products.reduce((acc, product) => {

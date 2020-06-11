@@ -2,7 +2,7 @@
   "name": "shara-api",
   "version": "4.1.0",
   "adonis-version": "4.1.0",
-  "description": "Shara api that will manage user orders.",
+  "description": "Shara api that will manage users orders.",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",

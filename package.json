@@ -30,6 +30,9 @@
     "url-parse": "^1.4.7"
   },
   "devDependencies": {},
+  "autoload": {
+    "App": "./"
+  },
   "engines": {
     "node": "10.18.0"
   }

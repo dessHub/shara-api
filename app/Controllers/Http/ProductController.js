@@ -1,6 +1,6 @@
 'use strict'
 
-const Product = use('App/models/Product')
+const Product = use('App/Models/Product')
 
 class ProductController {
   async index ({response}) {

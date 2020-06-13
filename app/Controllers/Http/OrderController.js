@@ -1,8 +1,8 @@
 'use strict'
 
 const Mail = use('Mail')
-const Order = use('App/models/Order')
-const History = use('App/models/History')
+const Order = use('App/Models/Order')
+const History = use('App/Models/History')
 
 class OrderController {
   async index ({response}) {

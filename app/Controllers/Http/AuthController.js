@@ -64,7 +64,7 @@ class AuthController {
     }
     catch (e) {
       console.log(e)
-      return response.json({message: 'You are not registered!'})
+      return response.status(401).json({message: 'You are not registered!'})
     }
     } else {
       response.status(401).send(validation.messages());

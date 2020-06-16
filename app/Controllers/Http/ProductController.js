@@ -21,15 +21,19 @@ class ProductController {
   }
 
   async store ({request, response}) {
-    const productInfo = request.only(['name', 'price'])
+    try {
+      const productInfo = request.only(['name', 'price'])
 
-    const product = new Product()
-    product.name = productInfo.name
-    product.price = productInfo.price
+      const product = new Product()
+      product.name = productInfo.name
+      product.price = productInfo.price
 
-    await product.save()
+      await product.save()
 
-    return response.status(201).json(product)
+      return response.status(201).json(product)
+    } catch (e) {
+      return response.json({message: 'Something wrong happend. Try again'})
+    }
   }
 
   async update ({params, request, response}) {

@@ -95,11 +95,15 @@ class OrderController {
     const orderId = order.id
 
     const reducedProducts = products.reduce((acc, product) => {
-      product.order_id = orderId
-      acc.push(product)
+      const productObj = {}
+      productObj.order_id = orderId
+      productObj.product_id = product.id
+      productObj.quantity = product.quantity
+      acc.push(productObj)
       return acc;
     }, [])
 
+    console.log("request", reducedProducts)
 
     await order.histories()
           .createMany(reducedProducts)

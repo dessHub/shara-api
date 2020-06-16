@@ -39,7 +39,7 @@ class OrderController {
       const authUser = await auth.getUser()
       let orders = await Order
             .query()
-            .with('histories')
+            .with('histories.product')
             .fetch()
       let jsonOrders = orders.toJSON();
 
@@ -103,7 +103,6 @@ class OrderController {
       return acc;
     }, [])
 
-    console.log("request", reducedProducts)
 
     await order.histories()
           .createMany(reducedProducts)

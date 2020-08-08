@@ -43,7 +43,7 @@ class ProductController {
     if (!product) {
       return response.status(404).json({data: 'Resource not found'})
     }
-    product.name = productnfo.name
+    product.name = productInfo.name
     product.price = productInfo.price
 
     await product.save()
